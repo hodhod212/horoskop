@@ -27,7 +27,7 @@
 	{
 		$name = $_POST['name'];
 		
-		$url = "http://localhost/HOROSKOP/api/".$name;
+		$url = "http://localhost/horoskop/api/".$name;
 		
 		$client = curl_init($url);
 		curl_setopt($client,CURLOPT_RETURNTRANSFER,true);

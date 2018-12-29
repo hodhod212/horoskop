@@ -5,15 +5,15 @@ require "viewHoroscope.php";
 if(!empty($_GET['name']))
 {
 	$name=$_GET['name'];
-	$price = get_price($name);
+	$dinHoroskp = get_dinHoroskp($name);
 	
-	if(empty($price))
+	if(empty($dinHoroskp))
 	{
 		response(200,"Product Not Found",NULL);
 	}
 	else
 	{
-		response(200,"Product Found",$price);
+		response(200,"Product Found",$dinHoroskp);
 	}
 	
 }
