@@ -19,6 +19,13 @@
     </div>
     <button type="submit" name="submit" class="btn btn-default">Submit</button>
   </form>
+  <form class="form-inline" action="" method="PUT">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" class="form-control"  placeholder="Enter Product Name" required/>
+    </div>
+    <button type="submit" name="submit" class="btn btn-default">Submit</button>
+  </form>
   <p>&nbsp;</p>
   <h3>
   <?php
@@ -27,7 +34,7 @@
 	{
 		$name = $_POST['name'];
 		
-		$url = "http://localhost/horoskop/api/".$name;
+		$url = "http://localhost/api/api/".$name;
 		
 		$client = curl_init($url);
 		curl_setopt($client,CURLOPT_RETURNTRANSFER,true);

@@ -1,19 +1,19 @@
 <?php
 header("Content-Type:application/json");
-require "viewHoroscope.php";
+require "data.php";
 
 if(!empty($_GET['name']))
 {
 	$name=$_GET['name'];
-	$dinHoroskp = get_dinHoroskp($name);
+	$price = get_price($name);
 	
-	if(empty($dinHoroskp))
+	if(empty($price))
 	{
 		response(200,"Product Not Found",NULL);
 	}
 	else
 	{
-		response(200,"Product Found",$dinHoroskp);
+		response(200,"Product Found",$price);
 	}
 	
 }
