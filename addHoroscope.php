@@ -1,20 +1,16 @@
 
 <?php
-//parse_str(ﬁle_get_contents("php://input"), $_PUT);
-function PUT_dinHoroskp($name)
-{
-  include(products.php);
-	
-	foreach($products as $product=>$dinHoroskp)
-	{
-		if($product==$name)
-		{
-			return $dinHoroskp;
-		}else {
-    $products.push($name);
-    echo $name;
-    }
-	}
+function error($msg){
+	$response = array("success"=>false, "message"=>$msg);
+	return json_encode($response);
 }
-
+$name = $_GET['name'];
+if($name==''){
+	die(error('Error: No name'));
+}
+$message = "Created".$name;
+$response = array();
+$response['success']= true;
+$response['message']=$message;
+echo json_encode($response);
 ?>

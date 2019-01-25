@@ -13,28 +13,4 @@
 		
 		echo $result->data; 
 	}
-
-/*function get_dinHoroskp($name)
-{
-  include(products.php);
-	
-	foreach($products as $product=>$dinHoroskp)
-	{
-		if($product==$name)
-		{
-			return $dinHoroskp;
-			break;
-		}
-	}
-}
-
-?>
-<?php
-  /*session_start();  
-  if(isset($_SESSION['views']))
-      $_SESSION['views'] = $_SESSION['views']+ 1;
-  else
-      $_SESSION['views'] = 1;
-
-  echo "views = " . $_SESSION['views']; */
 ?>
