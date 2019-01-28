@@ -1,57 +1,61 @@
 <?php
 
-function get_price($name)
-{
-	$products = [
-//
-	
-"01"=>"Vaduren:(21 mars – 20 april)
-De som känner dig säger att du är extra inspirerade. Ta tillvara på energin och du får en bra dag.",
-"02"=>"Oxen:(21 april – 21 maj)
-Det kan ibland bli nödvändigt med ett samarbete du i normala fall skulle undvika.
- Du är drabbad av känslan av att något undanhålls dig. ",
+    class Horoscope {
+        public $name;
+        public $minMonth;
+        public $maxMonth;
+        public $minDay;
+        public $maxDay;
+        public $description;
 
-"03"=>"Tvillingarna:(22 maj – 21 juni)
-Du kan komma att få besök av långväga gäster. Vissa husliga angelägenheter kräver din uppmärksamhet.",
+        function __construct($name, $minMonth, $maxMonth, $minDay, $maxDay, $description){
+            $this->name = $name;
+            $this->minMonth = $minMonth;
+            $this->maxMonth = $maxMonth;
+            $this->minDay = $minDay;
+            $this->maxDay = $maxDay;
+            $this->description = $description;
+        }    
+    }     
 
-"04"=>"Kraftan:(22 juni – 23 juli)
-De som känner dig säger att du är i behov av något nytt. Möjligen har du känslan av att tidigare möda
- varit förgäves. ",
+    $horoskop = array(
+        $vattumannen =  new Horoscope("<p>vattumannen", 1, 2, 20, 18,"Född: 20 januari - 18 februari <br/>
+        Fredsälskare, klarsynt, intuitiv, lojal, uppfinningsrik, revolutionär
+        <br/> Element: Vatten</p>"),
+        $fiskarna =  new Horoscope("fiskarna", 2, 3, 19, 20,"Född: 19 februari - 20 mars <br/>
+        Empati, human, slarvig, vänlig, hemlighetsfull, lättpåverkad, inspirerande
+        <br/> Element: Vatten"),
+        $väduren =  new Horoscope("väduren", 3, 4, 21, 19,"Född: 21 mars - 19 april <br/> 
+        Varm, entusiastisk, social, känslosam, stressad, impulsstyrd, aggressiv
+        <br/> Element: Eld"),
+        $oxen =  new Horoscope("oxen", 4, 5, 20, 21,"Född: 20 april - 20 maj <br/>
+        Envis, beskyddande, lojal, tålmodig, uthållig, stabil, praktisk, realistisk
+        <br/> Element: Jord"),
+        $tvillingarna = new Horoscope("tvillingarna", 5, 6, 22, 22,"Född: 21 maj - 21 juni <br/>
+        Kvick, kommunikativ, ytlig, nyfiken, självständig, modig, impulsiv, stressad
+        <br/> Element: Luft"),
+        $kräftan =  new Horoscope("kräftan", 6, 7, 23, 22,"Född: 22 juni - 22 juli <br/>
+        Föräldern, beskyddaren, bevararen, den trofaste, den lojale & sympatiske
+        <br/> Element: Vatten"),
+        $lejonet =  new Horoscope("lejon", 7, 8, 23, 22,"Född: 23 juli - 22 augusti <br/>
+        Storsint, kärleksfull, viljestark, svarsjuk, ledare, trofast, plikttrogen
+        <br/> Element: Solen"),
+        $jungfrun =  new Horoscope("jungfrun", 8, 9, 23, 22,"Född: 23 augusti - 22 september <br/>
+        Blyg, självmedveten, analytisk, produktiv, kritisk, föränderlig 
+        <br/> Element: Jord"),
+        $vågen =  new Horoscope("vågen", 9, 10, 23, 22,"Född: 23 september - 22 oktober <br/>
+        Förälskelse, charm, obeslutsamhet, förföriskhet, diplomati, social kompetens
+        <br/> Element: Luft"),
+        $skorpionen =  new Horoscope("skorpionen", 10, 11, 23, 22,"Född: 23 oktober - 21 november </br>
+        Intensiv, svarsjuk, passionerad, tystlåten, intensiv, lojal, modig, stark
+        <br/> Element: Vatten"),
+        $skytten =  new Horoscope("skytten", 11, 12, 23, 21,"Född: 22 november - 21 december <br/>
+        Ärlig, generös, idealistisk, optimistisk, överdrivande, entusiastisk, sökare
+        <br/> Element: Eld"),
+        $stenbocken =  new Horoscope("stenbocken", 12, 1, 22, 19,"Född: 22 december - 19 januari <br/>
+        Tillbakadragen, blyg, trogen, pliktkänsla, ambitiös, lojal 
+        <br/> Element: Jord")
+    );    
 
-"05"=>"Lejonet:(24 juli – 23 augusti)
-De planetariska impulserna är övervägande goda. Du bör inte dra några förhastade slutsatser!",
 
-"06"=>"Jungfrun:(24 augusti – 23 september)
-En intressant person upptäcker plötsligt att du kan du har vind i seglen. Ditt självförtroende är gott.",
-
-"07"=>"Vagen:(24 september – 23 oktober)
-Du bör hålla din dag flexibel, ett fullspäckat schema kan skapa problem för dig.", 
-
-"08"=>"Skorpionen:(24 oktober – 22 november)
-De som känner dig säger att du behöver tänka om. Ibland kan det vara viktigt att inte göra någon stor 
-affär av onödiga saker.",
-
-"09"=>"Skytten:(23 november – 20 december)
-Dagen börjar grubblande och i självrannsakans tecken. Men framåt kvällen fylls du av positiv energi.",
-
-"10"=>"Stenbocken:(21 december – 20 januari)
-En viss villrådighet kan märkas hos stenbocken. Kärlekslivet saknar möjligtvis den rätta gnistan.", 
-
-"11"=>"Vattumannen:(21 januari – 19 februari)
-Vattumän känner sig nu i behov att få gehör för idéer. Möjligen kommer du att behöva koppla
- av och ta det lugnt.",
-
-"12"=>"Fiskarna:(20 februari – 20 mars)
-Du är inne i en ganska produktiv fas, det kan skapa problem för dig."
- 
-	];
-	
-	foreach($products as $product=>$price)
-	{
-		if($product==$name)
-		{
-			return $price;
-			break;
-		}
-	}
-}
+    ?>

@@ -1,16 +1,17 @@
-
 <?php
-function error($msg){
-	$response = array("success"=>false, "message"=>$msg);
-	return json_encode($response);
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    session_start();
+    require "functions.php";
+    require "data.php";
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        calculateSign($horoskop, $month, $day);
+    } 
+    else{
+        die("Woops");
+    }
 }
-$name = $_GET['name'];
-if($name==''){
-	die(error('Error: No name'));
+else{
+    die ("Så får du inte göra!!!!");
 }
-$message = "Created".$name;
-$response = array();
-$response['success']= true;
-$response['message']=$message;
-echo json_encode($response);
 ?>

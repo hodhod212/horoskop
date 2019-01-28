@@ -1,16 +1,10 @@
 <?php
-	if(isset($_GET['submit']))
-	{
-		$name = $_GET['name'];
-		
-		$url = "http://localhost/horoskop/api/".$name;
-		
-		$client = curl_init($url);
-		curl_setopt($client,CURLOPT_RETURNTRANSFER,true);
-		$response = curl_exec($client);
-		
-		$result = json_decode($response);
-		
-		echo $result->data; 
-	}
+session_start();
+
+if(isset($_SESSION["usersSign"])){
+	$time = time();
+	$time_modified=date('D M Y @ H:i:s',strtotime('+1 week'));
+    echo "<strong><p>Ditt horoskop är: " . $_SESSION["usersSign"] . "</p></strong>"." " .$_SESSION["description"];
+   echo '<br>'."köp en lot efter en vecka exact i den här tiden:".$time_modified;
+};
 ?>
