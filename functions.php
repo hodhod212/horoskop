@@ -1,7 +1,6 @@
 <?php
 
-function calculateSign($horoskop, $month, $day){
-    $personnummer = $_POST["personnr"];
+function calculateSign($horoskop, $personnummer){
     $month = $personnummer[2] . $personnummer[3]; 
     $day = $personnummer[4] . $personnummer[5]; 
 
@@ -11,22 +10,20 @@ function calculateSign($horoskop, $month, $day){
             if ($month == $a->minMonth and $day >= $a->minDay ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                echo "true";
+                return true;
                 
             }
             elseif($month == $a->maxMonth and $day <= $a->maxDay  ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                echo "true";
+                return true;
             }
         }
     }
+    return false;
 }
 
-function updateSign($horoskop, $month, $day){
-
-    parse_str(file_get_contents("php://input"), $_PUT);
-    $personnummer = $_PUT["personnr"];
+function updateSign($horoskop, $personnummer){
 
     $month = $personnummer[2] . $personnummer[3]; 
     $day = $personnummer[4] . $personnummer[5]; 
@@ -36,18 +33,18 @@ function updateSign($horoskop, $month, $day){
             if ($month == $a->minMonth and $day >= $a->minDay ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                echo "true";
+                return true;
                 
             }
             elseif($month == $a->maxMonth and $day <= $a->maxDay  ){
                 $_SESSION["usersSign"] = $a->name;
                 $_SESSION["description"] = $a->description;
-                echo "true";
+                return true;
             }
         }
     }
     else{
-        echo "false";
+        return false;
     }
 };
 ?>

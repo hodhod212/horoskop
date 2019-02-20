@@ -4,13 +4,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
     if(isset($_SESSION["usersSign"])){
         unset($_SESSION["description"]);
         unset($_SESSION["usersSign"]);
-        echo "true";
+        echo true;
     }
     else{
-        echo "false";
+        echo false;
     }
 }
 else{
-    die ("Så får du inte göra!!!!");
+    die (" ");
 };
 ?>

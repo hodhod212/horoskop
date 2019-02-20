@@ -3,15 +3,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     session_start();
     require "functions.php";
     require "data.php";
+    $personNumber = $_POST["personnr"];
+    header("Content-Type", "application/json");
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-        calculateSign($horoskop, $month, $day);
-    } 
-    else{
-        die("Woops");
-    }
+    $wasSuccessful = calculateSign($horoskop, $personNumber);
+    if ($wasSuccessful) {
+        echo true;
+    } else {
+        echo false;
+    }   
 }
 else{
-    die ("Så får du inte göra!!!!");
+    echo json_encode(false);
 }
 ?>

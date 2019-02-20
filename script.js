@@ -28,8 +28,8 @@ function updateHoroscope(){
            "personnr": $("#personalNumber").val()
         },
         success: function(results){
-           
-            if(results == "true"){
+            console.log(results)
+            if(results == true){
                 runView();
             }
         }   

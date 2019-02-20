@@ -18,7 +18,7 @@
         </div>
 
         Fyll i ditt personnummer (ååmmdd) för att se ditt stjärntecken! <br/> <br/>
-        <input type="number" placeholder="åå-mm-dd" name="personalNumber" id="personalNumber"/>
+        <input type="number" placeholder="ååmmdd" name="personalNumber" id="personalNumber"/>
         <div id="buttonsDiv">
             <div id="saveMyHoroscopeDiv">
                 <button id="test" onclick="saveHoroscope()">Spara mitt horoscop</button>

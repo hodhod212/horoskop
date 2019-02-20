@@ -19,9 +19,9 @@
     }     
 
     $horoskop = array(
-        $vattumannen =  new Horoscope("<p>vattumannen", 1, 2, 20, 18,"Född: 20 januari - 18 februari <br/>
+        $vattumannen =  new Horoscope("vattumannen", 1, 2, 20, 18,"Född: 20 januari - 18 februari <br/>
         Fredsälskare, klarsynt, intuitiv, lojal, uppfinningsrik, revolutionär
-        <br/> Element: Vatten</p>"),
+        <br/> Element: Vatten"),
         $fiskarna =  new Horoscope("fiskarna", 2, 3, 19, 20,"Född: 19 februari - 20 mars <br/>
         Empati, human, slarvig, vänlig, hemlighetsfull, lättpåverkad, inspirerande
         <br/> Element: Vatten"),
